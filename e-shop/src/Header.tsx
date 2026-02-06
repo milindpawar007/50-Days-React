@@ -27,7 +27,9 @@ const Header: React.FC = () => {
       <div className="header__nav">
         <div className="nav__item">
           <span className='nav__itemLineOne'>Hello Guest</span>
+           <Link to="/login" style={{textDecoration:"none"}}>
           <span className='nav__itemLineTwo'>Sign in</span>
+          </Link>
         </div>
         <div className="nav__item">
           <span className='nav__itemLineOne'>Your</span>
