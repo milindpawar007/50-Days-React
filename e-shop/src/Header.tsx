@@ -5,8 +5,11 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import { useCart } from './StateProvider';
 // Create the functional component, typing its props
 const Header: React.FC = () => {
+  const {  cart } = useCart();
+   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   return (
     <div className='header'>
         <Link to="/">
@@ -34,7 +37,7 @@ const Header: React.FC = () => {
         <div className="nav__itemBasket">
            
           <ShoppingBasketIcon  />
-          <span className='nav__itemLineTwo nav__basketCount'>0</span>
+          <span className='nav__itemLineTwo nav__basketCount'>{totalItems}</span>
          
         </div>
          </Link>
