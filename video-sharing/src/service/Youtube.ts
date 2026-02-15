@@ -7,8 +7,7 @@ const youtubeApi = axios.create({
 
 export default youtubeApi;
 
-// REACT_APP_API_URL = "AIzaSyCcvWJzYMxSZPTtGCTU1j0Nx05C8OWiasU";
-const API_KEY = "AIzaSyCcvWJzYMxSZPTtGCTU1j0Nx05C8OWiasU";
+const API_KEY = import.meta.env.VITE_YT_API_KEY;
 
 export async function searchYoutube(searchTerm: string, maxResults = 5) {
   const { data } = await youtubeApi.get("/search", {
